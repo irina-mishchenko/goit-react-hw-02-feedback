@@ -17,11 +17,11 @@ const Statictics = ({ good, neutral, bad, total, positivePercentage }) => {
 };
 
 Statictics.propTypes = {
-  good: propTypes.string,
-  neutral: propTypes.string,
-  bad: propTypes.string,
-  total: propTypes.string,
-  positivePercentage: propTypes.string,
+  good: propTypes.string.isRequired,
+  neutral: propTypes.string.isRequired,
+  bad: propTypes.string.isRequired,
+  total: propTypes.string.isRequired,
+  positivePercentage: propTypes.string.isRequired,
 };
 
 export default Statictics;

@@ -11,6 +11,7 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
           type="button"
           data-name={option}
           onClick={onLeaveFeedback}
+          key={Object.keys(options)}
         >
           {option}
         </button>

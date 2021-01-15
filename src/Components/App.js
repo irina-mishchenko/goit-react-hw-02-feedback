@@ -22,16 +22,18 @@ class App extends Component {
     return Object.values(this.state).reduce((acc, item) => acc + item, 0);
   };
 
-  countPositiveFeedbackPercentage = () => {
-    const { good, bad, neutral } = this.state;
-    return Math.round((good / (good + neutral + bad)) * 100);
+  countPositiveFeedbackPercentage = total => {
+    const { good } = this.state;
+    return Math.round((good / total) * 100);
   };
 
   render() {
     const { good, neutral, bad } = this.state;
-    const isShowStatistics = this.countTotalFeedback() > 0;
     const total = this.countTotalFeedback();
-    const positiveFeedbackPercentage = this.countPositiveFeedbackPercentage();
+    const isShowStatistics = total > 0;
+    const positiveFeedbackPercentage = this.countPositiveFeedbackPercentage(
+      total,
+    );
 
     return (
       <div>
